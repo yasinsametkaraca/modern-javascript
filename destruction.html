@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+      //array destcruction
+      let name =["yasin", "samet"]
+      /*let firstName =name[0]
+      let lastName =name[1]
+      console.log(firstName + " " + lastName)
+        */
+     /* let [firstName, lastName] = name
+      console.log(firstName + " " + lastName)*/
+
+/*      let [firstName, lastName] = "Yasin Samet".split(" ")
+      console.log(firstName,lastName)*/
+
+    /*  let user=["samet", "karaca","kayseri","19"]
+      let [firstName, lastName,,age] =user
+      console.log(firstName + " " + lastName + " " + age)*/
+
+    /*  let user=["samet", "karaca","kayseri","melikgazi"]
+      let [firstName, lastName,...address]=user
+      console.log(firstName,lastName ,address)*/
+
+    //object destcruction
+      let urun={
+          marka:"apple",
+          model:"Iphone 7",
+          fiyat:2000,
+      }
+      // let {marka,model,fiyat,urunStatus=false}= urun
+      // console.log(marka,model,fiyat,urunStatus)
+
+      /*function productShow(marka,model,fiyat=0,urunStatus=false) {
+          console.log(marka,model,fiyat,urunStatus)
+      }
+      productShow("samsung","s7") //samsung s7 0 false*/
+
+      let product={
+          marka:"apple",
+          model:"Iphone 7",
+
+      }
+      function productShow(object) {
+          let {marka,model,fiyat=0,urunStatus=false}= object
+          console.log(marka,model,fiyat,urunStatus)
+      }
+      productShow(product)  //apple Iphone 7 0 false
+
+  </script>
+
+
+</body>
+</html>

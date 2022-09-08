@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*console.log("started");
+    const login =(username,password) =>{
+        setTimeout(() =>{
+            return {username:username}
+        },1000)
+      }
+    const user=login("ysk",123456)
+    console.log(user)  //çıktıda set timeout 1 saniye bekleneceğinden dolayı username bilgisine ulaşamayız.
+    console.log("end");*/
+
+    const login =(username,password,callback) =>{
+        setTimeout(() =>{
+            callback({username:username})
+        },1000)
+    }
+    login("ysk",123456,user=>{
+        console.log(user);  //asenkron şekilde çalışır çıktı= {username: 'ysk'}
+        getPostsAfterLogin(user.username,(Post)=>{
+            console.log(Post) //['Post 1', 'Post 2', 'Post 3'] login olduktan sonra gelen username e göre postları listeledik
+        })
+    })
+    const getPostsAfterLogin = (username,callback) =>{
+        setTimeout(() =>{
+            callback(["Post 1", "Post 2", "Post 3"])
+        })
+    }
+
+
+</script>
+
+</body>
+</html>

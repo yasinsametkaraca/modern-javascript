@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    const students = new Map();
+    /* let user="ysk"*/
+
+    students.set(5, "betül")
+    students.set("85455555555", "samet")
+    students.set(true, "sadık")
+    /*   students.set(user,"sadık")*/
+
+    console.log(students)  //{5 => 'betül', '85455555555' => 'samet', true => 'sadık'}
+    console.log(students.get(5)) //betül
+
+    let result
+    result = students.size  //3
+    result = students.has(5) //true
+    /*students.delete(5)*/
+    result = students.size  //2
+    /*students.clear() //hepsi silinir*/
+    console.log(result)
+
+    for (let i of students.keys()) {
+        console.log(i) // 5 85455555555 true
+    }
+    for (let i of students.values()) {
+        console.log(i) // betül samet sadık
+    }
+    for (let i of students.entries()) {
+        console.log(i) // her eleman dizi şeklinde gelir ['85455555555', 'samet']    [true, 'sadık']
+    }
+
+    for (let [key, values] of students.entries()) {
+        console.log(key, values) // 5 'betül'    85455555555 samet    true 'sadık'
+    }
+
+
+</script>
+
+</body>
+</html>

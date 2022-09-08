@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //A JavaScript Set is a collection of unique values.Each value can only occur once in a Set.A Set can hold any value of any data type.
+    /*const sayilar=new Set([1,2,3,4]);*/
+    const sayilar = new Set()
+    sayilar.add(1)
+    sayilar.add(2)
+    sayilar.add(2) //eklemez sadece bir kere aynı değer eklenebilri
+    console.log(sayilar)// {1,2}
+
+    const setidiziyecevir = [...sayilar]
+    console.log(setidiziyecevir) //[1,2]
+
+    sayilar.delete(1) //value bilgisi ister
+    console.log(sayilar.has(1)) //false
+
+    for (let i of sayilar.values()) {
+        console.log(i) //sayilar.values diyerek iteratör yaparız. Yani içerisinde gezebiliriz.
+    }
+    for (let i of sayilar) {
+        console.log(i) //böylede olur
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //function constructor
+    function Person(name, job, birthdate) {
+        this.name = name;
+        this.job = job;
+        this.birthdate = birthdate;
+       /* this.ageCalculate=function (date)   {
+            return date-this.birthdate
+
+        }*/
+    }
+    Person.prototype.ageCalculate = function (date) {
+        return date-this.birthdate
+    }
+    let mehmet=new  Person("mehmet karaca", "muhasebeci",1970);
+    console.log(mehmet.ageCalculate(2022))
+
+
+
+    //class (ES6)
+    class PersonES6{
+        constructor(name, job, birthdate)   {
+            console.log("ES6 constructor called");
+            this.name = name;
+            this.job = job;
+            this.birthdate = birthdate;
+        }
+        ageCalculate(){
+            let date=new Date().getFullYear();
+            return date-this.birthdate
+        }
+
+    }
+    let yasin=new PersonES6("yasin", "öğrenci",1999);
+    console.log(yasin) //PersonES6{name: 'yasin', job: 'öğrenci', birthdate: 1999}
+    console.log(yasin.ageCalculate())
+</script>
+</body>
+</html>

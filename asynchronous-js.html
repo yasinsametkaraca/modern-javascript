@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="button">save</button>
+
+    <script>
+
+        // sync =Kodlar yukarıdan aşağıya doğru sırayla işlenir ve bir satırdaki işlem bitmeden diğer satıra geçilmez.
+        console.log(1);
+        console.log(2);
+        console.log(3);
+
+        // async= Kod akışının sırayla işlemediği, işlemlerin birbirini beklemediği, kod akışının işlem durumlarına göre devam ettiği programlamaya Asenkron Programlama denir.
+        console.log(1);
+        setTimeout(() => {
+            console.log(2); 
+        }, 2000);
+        console.log(3);
+        document.getElementById("button").addEventListener("click", () => {
+            console.log("button clicked");
+        });
+
+    </script>
+
+
+</body>
+</html>

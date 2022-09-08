@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        constructor(name, job, birthdate) {
+            console.log("ES6 constructor called");
+            this.name = name;
+            this.job = job;
+            this.birthdate = birthdate;
+        }
+
+        ageCalculate() {
+            let date = new Date().getFullYear();
+            return date - this.birthdate
+        }
+
+        get name() {
+            return this._name
+        }
+        set name(value) {
+            if (value.length < 3) {
+                console.log("Az karakter girdiniz")
+                return //bunun amacı eğer if'e girerse alt tarafa girmesin
+            }
+            this._name = value
+        }
+
+        get birthdate() {
+            return this._birthdate
+        }
+        set birthdate(value) {
+            if (value > new Date().getFullYear()) {
+                console.log("Tekrar giriniz")
+                return
+            }
+            {
+                this._birthdate = value
+            }
+        }
+    }
+
+    let yasin = new Person("yasin", "öğrenci", 1999); // set metodu çalışır
+    console.log(yasin.name) //get metodu çalışır
+
+</script>
+</body>
+</html>

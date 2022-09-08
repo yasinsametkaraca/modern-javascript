@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Person
+    //Student
+    //Teacher
+
+    //Parent Class
+    class Person {
+        constructor(name, birthDate) {
+            console.log("Parent Constructor")
+            this.name = name;
+            this.birthDate = birthDate;
+        }
+        ageCalculate() {
+            let date = new Date().getFullYear();
+            return date - this.birthDate
+        }
+        describeYourself() {
+            return `My name is ${this.name}`
+        }
+    }
+
+    //Child Class
+    class Student extends Person {
+        constructor(name, birthDate, studentNumber) {
+            console.log("Child Constructor")
+            super(name, birthDate);
+            this.studentNumber = studentNumber;
+        }
+        describeYourself() {
+            return `My name is ${this.name} and student number is ${this.studentNumber}`
+        }
+    }
+
+    class Teacher extends Person {
+        constructor(name, birthDate, branch) {
+            console.log("Child Constructor")
+            super(name, birthDate);
+            this.branch = branch;
+        }
+        describeYourself() {
+            return `My name is ${this.name} and my branch is ${this.branch}`
+        }
+    }
+
+    let person = new Person("ysk", 1999)
+    let student = new Student("ahmet", 1996, 20005558)
+    console.log(student.ageCalculate()); //26 Kalıtım da çalışır
+    console.log(person.ageCalculate()) //23
+
+    console.log(student.describeYourself()) //hem atada hem de çocukda aynı metod varsa çocuk çağırınca çoçuğun metodu çalışır
+
+
+</script>
+
+</body>
+</html>
